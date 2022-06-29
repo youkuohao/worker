@@ -1,0 +1,20 @@
+{
+  "compilerOptions": {
+    "esModuleInterop": true,
+    "sourceMap": true,
+    "skipLibCheck": true,
+    "allowSyntheticDefaultImports": true,
+    "target": "es5",
+    "resolveJsonModule": true,
+    "lib": [
+      "WebWorker",
+      "dom",
+      "esnext"
+    ],
+    "module": "esnext",
+    "moduleResolution": "node",
+  },
+  "include": [
+    "src/**/*"
+  ]
+}

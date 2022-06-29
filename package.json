@@ -1,0 +1,26 @@
+{
+  "name": "@youkuohao/worker",
+  "version": "0.70.2",
+  "type": "module",
+  "types": "lib/typescript/index.d.ts",
+  "module": "lib/module/index.js",
+  "files": [
+    "lib"
+  ],
+  "scripts": {
+    "build:module": "tsc --module esnext --target esnext --outDir lib",
+    "build:typescript": "tsc --declaration --emitDeclarationOnly --outDir lib",
+    "build": "npm run build:module && npm run build:typescript"
+  },
+  "dependencies": {
+    "content-type": "^1.0.4",
+    "eventsource": "^2.0.2",
+    "find-up": "^6.3.0",
+    "http-errors": "^1.7.1",
+    "jsdom": "^16.5.1",
+    "raw-body": "^2.5.1"
+  },
+  "devDependencies": {
+    "typescript": "^4.7.3"
+  }
+}
