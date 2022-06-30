@@ -1,4 +1,4 @@
-import { Worker, WorkerOptions } from 'worker_threads'
+import { Worker as NodeWorker, WorkerOptions } from 'worker_threads'
 import { Http2ServerRequest, Http2ServerResponse, } from 'http2'
 import { IncomingMessage, ServerResponse } from 'http'
 
@@ -30,7 +30,7 @@ function createWorkerOptions(
   ]
 }
 
-export class Runtime extends Worker {
+export class Worker extends NodeWorker {
 
   constructor(filename: string | URL, options: RuntimeOptions) {
     super(...createWorkerOptions(filename, options))
