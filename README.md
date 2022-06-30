@@ -1,4 +1,4 @@
-# Youkuohao Woker 
+# Youkuohao Worker 
 
 ## Requirements
 
@@ -19,6 +19,13 @@ npm run example:server
 ```
 
 And open http://localhost:8080 in browser
+
+
+## Install
+
+```
+npm i @youkuohao/worker
+```
 
 
 ## License
