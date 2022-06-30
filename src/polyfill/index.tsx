@@ -1,11 +1,11 @@
 /**
  * KEEP THE ORDER RIGHT HERE!!!
  */
-import './DOM'
-import './File'
-import './Event'
-import './EventSource'
-import './fetch'
-import './fetchEvent'
-import './crypto'
-import './RAF'
+import './DOM.js'
+import './File.js'
+import './Event.js'
+import './EventSource.js'
+import './fetch.js'
+import './fetchEvent.js'
+import './crypto.js'
+import './RAF.js'

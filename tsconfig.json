@@ -12,7 +12,7 @@
       "esnext"
     ],
     "module": "esnext",
-    "moduleResolution": "node",
+    "moduleResolution": "nodenext",
   },
   "include": [
     "src/**/*"

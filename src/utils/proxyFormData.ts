@@ -1,4 +1,4 @@
-import { toFormData } from "./multipartParser";
+import { toFormData } from "./multipartParser.js";
 
 export function proxyFormData(request: Request) {
 

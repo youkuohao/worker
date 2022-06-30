@@ -44,3 +44,5 @@ class FilePolyfill extends Blob {
 if (!globalThis.File) {
   Object.assign(globalThis, { File: FilePolyfill })
 }
+
+export { }

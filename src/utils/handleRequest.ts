@@ -3,8 +3,8 @@ import { Http2ServerRequest, Http2ServerResponse, OutgoingHttpHeaders } from "ht
 import { Readable } from "stream"
 import { ReadableStream } from "stream/web"
 import { MessageChannel, TransferListItem, Worker } from "worker_threads"
-import { RequestTransformer } from "./RequestTransformer"
-import { ResponseTransformer } from "./ResponseTransformer"
+import { RequestTransformer } from "./RequestTransformer.js"
+import { ResponseTransformer } from "./ResponseTransformer.js"
 
 export function handleRequestWithWorker(worker: Worker, req: Http2ServerRequest | IncomingMessage, res: Http2ServerResponse | ServerResponse) {
   const handleRuntimeClose = () => {

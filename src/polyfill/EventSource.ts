@@ -5,3 +5,5 @@ if (!globalThis.EventSource) {
     EventSource,
   })
 }
+
+export { }

@@ -1,8 +1,8 @@
 import { IncomingMessage, ServerResponse } from 'http'
 import { Http2ServerRequest, Http2ServerResponse, OutgoingHttpHeaders } from 'http2'
-import { proxyFormData } from './proxyFormData'
+import { proxyFormData } from './proxyFormData.js'
 
-import { RequestTransformer } from './RequestTransformer'
+import { RequestTransformer } from './RequestTransformer.js'
 
 /**
  * Transform and write Web Response headers to node.js ServerResponse

@@ -55,3 +55,5 @@ if (!globalThis.requestAnimationFrame) {
     cancelAnimationFrame: caf,
   })
 }
+
+export { }

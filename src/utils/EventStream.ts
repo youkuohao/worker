@@ -1,4 +1,4 @@
-import { EventStream, EventStreamMessage } from "../types";
+import { EventStream, EventStreamMessage } from "../types.js";
 
 
 export class ServerEventStream implements EventStream {

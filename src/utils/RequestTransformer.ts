@@ -1,7 +1,7 @@
 import { IncomingMessage } from 'http'
 import { Http2ServerRequest, IncomingHttpHeaders } from 'http2'
 
-import { toWebStream } from './toWebStream'
+import { toWebStream } from './toWebStream.js'
 
 class RequestMessage {
   url: string

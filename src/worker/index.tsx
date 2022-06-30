@@ -1,6 +1,6 @@
 import { parentPort, isMainThread, workerData } from 'worker_threads'
 
-import '../polyfill/Event'
+import '../polyfill/Event.js'
 
 if (isMainThread) {
   throw new Error(`@youkuohao/worker/lib/worker/index.js can only run in worker_threads`)

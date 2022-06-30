@@ -3,13 +3,13 @@ import errors from 'http-errors'
 import { Http2ServerRequest, Http2ServerResponse, } from 'http2'
 import { IncomingMessage, ServerResponse } from 'http'
 
-import { RuntimeCode } from './RuntimeCode'
+import { RuntimeCode } from './RuntimeCode.js'
 import {
   RuntimeExtension,
   RuntimeMessage,
   RuntimeMessageExchange,
-} from './types'
-import { handleRequestWithWorker } from './utils/handleRequest'
+} from './types.js'
+import { handleRequestWithWorker } from './utils/handleRequest.js'
 
 type RuntimeOptions = WorkerOptions & {
   extensions?: RuntimeExtension[]
@@ -17,7 +17,7 @@ type RuntimeOptions = WorkerOptions & {
 
 function createWorkerOptions(
   filename: string | URL,
-  options: RuntimeOptions
+  options: RuntimeOptions = {}
 ): [string, RuntimeOptions] {
   const useEval = false
   const optionalWorkerData = options.workerData ?? {}
@@ -94,6 +94,7 @@ export class Runtime extends Worker {
   }
 
   /**
+   * @deprecated will be removed in next version
    * send request message to worker
    * 
    * 根据type找到对应的extension，调用extension的createMessage方法得到可以发送给
@@ -184,6 +185,7 @@ export class Runtime extends Worker {
   }
 
   /**
+   * @deprecated will be removed in next version
    * 响应worker的主动请求，如果是worker的被动请求则不处理
    */
   private response = (msg: RuntimeMessage): void => {

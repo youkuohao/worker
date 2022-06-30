@@ -8,3 +8,5 @@ if (!globalThis.document) {
     navigator: dom.window.navigator,
   })
 }
+
+export { }

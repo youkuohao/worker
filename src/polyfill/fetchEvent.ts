@@ -1,12 +1,12 @@
 import { parentPort, workerData, MessagePort, TransferListItem } from 'worker_threads'
-import { RequestTransformer } from '../utils/RequestTransformer'
+import { RequestTransformer } from '../utils/RequestTransformer.js'
 import {
   ResponseTransformer,
   ResponseMessage,
-} from '../utils/ResponseTransformer'
-import { FetchQueue } from '../utils/FetchQueue'
-import { RuntimeMessage, RuntimeMessageExchange } from '../types'
-import { proxyFormData } from '../utils/proxyFormData'
+} from '../utils/ResponseTransformer.js'
+import { FetchQueue } from '../utils/FetchQueue.js'
+import { RuntimeMessage, RuntimeMessageExchange } from '../types.js'
+import { proxyFormData } from '../utils/proxyFormData.js'
 
 const queue = new FetchQueue()
 
@@ -92,3 +92,5 @@ parentPort?.addListener('message', async (msg: RuntimeMessage) => {
     })
   }
 })
+
+export { }
