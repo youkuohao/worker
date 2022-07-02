@@ -5,19 +5,28 @@ import { IncomingMessage, ServerResponse } from 'http'
 import { RuntimeCode } from './RuntimeCode.js'
 import { handleRequestWithWorker } from './utils/handleRequest.js'
 
-type RuntimeOptions = WorkerOptions
+type RuntimeOptions = WorkerOptions & {
+  registerList?: string[]
+  loader?: string
+}
 
 function createWorkerOptions(
   filename: string | URL,
   options: RuntimeOptions = {}
 ): [string, RuntimeOptions] {
-  const useEval = false
+  const useEval = options.eval
   const optionalWorkerData = options.workerData ?? {}
+  let loader = options.loader
 
-  const registerList = [RuntimeCode.getPolyfillFilename()]
+  const registerList = options.registerList ?? []
+  registerList.push(RuntimeCode.getPolyfillFilename())
+
+  if (!loader) {
+    loader = useEval ? RuntimeCode.getCode() : RuntimeCode.getCodeFilename()
+  }
 
   return [
-    useEval ? RuntimeCode.getCode() : RuntimeCode.getCodeFilename(),
+    loader,
     {
       ...options,
       workerData: {
@@ -25,7 +34,6 @@ function createWorkerOptions(
         filename,
         registerList,
       },
-      eval: useEval,
     },
   ]
 }
