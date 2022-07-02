@@ -1,8 +1,4 @@
-import './polyfill/fetch.js'
-import './polyfill/Event.js'
-import './polyfill/EventSource.js'
-import './polyfill/DOM.js'
-import './polyfill/RAF.js'
+import './polyfill/index.js'
 
 export * from './Runtime.js'
 export { ResponseTransformer } from './utils/ResponseTransformer.js'
